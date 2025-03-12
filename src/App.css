@@ -1,0 +1,456 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden; 
+  background-color: #f5f5f5;
+  font-family: 'Montserrat', sans-serif;
+}
+#root{
+  width: 100%;
+  height: 100%;
+}
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #1e1e4a;
+  color: white;
+  padding: 20px;
+  height: 100vh;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.sidebar h2 {
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar li:hover {
+  background-color: #3a3a5c;
+  cursor: pointer;
+}
+
+.sidebar li svg {
+  margin-right: 10px;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-left{
+  display: flex;
+  align-items: center;
+}
+
+.header-left h1{
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.header-controls select,
+.header-controls input {
+  margin-left: 10px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.logo{
+  height:40px;
+  margin-right: 10px;
+}
+
+.controls select,
+.controls input{
+  margin-left: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.table-container{
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.table th,
+.table td {
+  padding: 16px 20px;
+  text-align: left;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.table th {
+  font-weight: bold;
+  background-color: #f4f4f4;
+}
+
+.action-button{
+  background-color: #1e1e4a;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.action-button:hover{
+  background-color: #333;
+}
+
+.table tr:hover td{
+  background-color: #f9f9f9;
+}
+
+/* === Info Panel Styling === */
+.info-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  flex-wrap: wrap; /* Responsive */
+}
+
+/* === Info Sections === */
+.info-section {
+  flex: 1;
+  min-width: 250px;
+  padding: 10px;
+}
+
+/* === Source Section === */
+.source-section p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.source-section a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.source-section a:hover {
+  text-decoration: underline;
+}
+
+/* === Reliability Score Section === */
+.score-section {
+  text-align: center;
+}
+
+.score-box {
+  background-color: #f1f5f9;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+.score-box h1 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #1f2937;
+  margin: 0;
+}
+
+.score-reason {
+  display: inline-block;
+  background-color: #3b82f6;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Centering the entire form container in the viewport */
+.onboarding-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 100%;
+  min-height: 100vh; /* Full viewport height */
+  background-color: #f3f4f6; /* Light gray background */
+}
+
+/* White card container */
+.onboarding-card {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Makes it responsive */
+  max-width: 1200px; /* Keeps it clean on large screens */
+  height: 90%;
+  text-align: left;
+}
+
+/* Header section */
+.onboarding-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.onboarding-logo {
+  width: 48px;
+  height: 48px;
+}
+
+/* Form styling */
+.onboarding-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Labels */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+/* Input Fields */
+.form-group input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Submit button */
+.submit-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.landing-container {
+  display: flex;
+  height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #f3f4f6;
+}
+
+.create-button{
+  display: flex;
+  justify-content: center; /* Center the buttons */
+  gap: 12px;               /* Adds space between the buttons */
+  margin-top: 20px;
+  background-color: rgb(20, 102, 150);
+  color: white;
+}
+.ingredient-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f4f6;
+  padding: 20px;
+}
+
+/* === Card Layout === */
+.ingredient-card {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.header-icon {
+  display: flex;
+  justify-content: space-between; /* Spread Header and Icon */
+  align-items: center;
+}
+
+.form-ingredient {
+  width: 50px;
+  height: 50px;
+}
+
+/* === Input Fields === */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* === Grid Layout for Fields === */
+.form-group-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3-column layout */
+  gap: 15px;
+}
+
+/* === Submit Button === */
+.submit-button {
+  background-color: #22c55e;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #1e9b4e;
+}
+
+.header-icon{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+
+.button-group {
+  display: flex;
+  justify-content: center; /* Center the buttons */
+  gap: 12px;               /* Adds space between the buttons */
+  margin-top: 20px;        /* Optional: Add space above the button group */
+}
+
+/* Container Styling */
+.success-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f8f9fa; 
+}
+
+/* Full-page card styling */
+.success-card {
+  background: white;
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 800px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
